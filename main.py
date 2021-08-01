@@ -10,7 +10,8 @@ def logger_factory(file):
                 f.write(f'Название функции: {func.__name__}\n')
                 f.write(f'Аргументы функции: {args} и {kwargs}\n')
                 f.write(f'Возращаемое значение: {func(*args, **kwargs)}\n')
-            return
+            #return {'date': datetime.datetime.now(), 'name': func.__name__, 'args': args, 'kwargs': kwargs, 'return_value': func(*args, **kwargs)}
+            return func(*args, **kwargs)
         return new_func
     return logger
 
